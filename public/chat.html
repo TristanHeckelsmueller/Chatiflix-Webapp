@@ -1,60 +1,72 @@
 <!DOCTYPE html>
-
-<html>
-    <head>
-        <title>Chatify|ChatApp</title>
-        <meta charset="UTF-8">
-        <link rel="stylesheet" href="/css/styles.css">
-    </head>
-    <body class="chat">
-        <div class="chat__sidebar">
-            <h3>Chatify</h3>
-            <div id="users"></div>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>Chat | Chatiflix</title>
+    <meta name="keywords" content="Chat App, Tristan, Heckelsmueller, Heckelsmüller">
+    <meta name="description" content="Node-Chat-App made by Tristan Heckelsmueller">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body class="chat">
+<section class="chat__sidebar">
+    <div class="chat__sidebar-header">
+        <h2>Chat<span class="chat__sidebar-header--orange">ifix</span></h2>
+        <div class="chat__sidebar-header__room">
+            <h4>Room Name</h4>
         </div>
-        <div class="chat__main">
-            <ol id="messages" class="chat__messages">
-            </ol>
-
-            <div class="chat__footer">
-                <form id="message-form">
-                    <input name="message" type="text" placeholder="Message" autofocus autocomplete="off"/>
-                    <button>Send</button>
-                </form>
-
-                <button id="send-location">Send Location</button>
-            </div>
+    </div>
+    <div class="chat__sidebar-body">
+        <div id="users">
 
         </div>
+    </div>
+</section>
+<section class="chat__content">
 
-        <script id="message-template" type="text/template">
-            <li class="message">
-                <div class="message__title">
-                    <h4>{{from}}</h4>
-                    <span>{{createdAt}}</span>
-                </div>
-                <div class="message__body">
-                    <p>{{text}}</p>
-                </div>
-            </li>
-        </script>
-        <script id="location-message-template" type="text/template">
-            <li class="message">
-                <div class="message__title">
-                    <h4>{{from}}</h4>
-                    <span>{{createdAt}}</span>
-                </div>
-                <div class="message__body">
-                    <p>
-                    <a href="{{url}}" target="_blank">My current location</a>
-                    </p>
-                </div>
-            </li>
-        </script>
-        <script src="/socket.io/socket.io.js"></script>
-        <script src="/js/libs/jquery-3.3.1.min.js"></script>
-        <script src="/js/libs/moment.js"></script>
-        <script src="/js/libs/mustache.js"></script>
-        <script src="/js/libs/deparam.js"></script>
-        <script src="/js/chat.js"></script>
-    </body>
+    <ol id="messages" class="chat__messages">
+
+    </ol>
+
+
+</section>
+<section class="chat__bar">
+    <form id="message-form">
+        <input type="text" name="message" placeholder="Type here" autofocus autocomplete="off">
+        <button class="chat__bar-send">Send</button>
+    </form>
+    <!-- <button id="send-location" class="chat__bar-loc">Location</button> -->
+</section>
+<script id="message-template" type="text/template">
+    <li class="message">
+        <div class="message__title">
+            <h4>{{from}}</h4>
+            <span>{{createdAt}}</span>
+        </div>
+        <div class="message__body">
+            <p>{{text}}</p>
+        </div>
+    </li>
+</script>
+<script id="location-message-template" type="text/template">
+    <li class="message">
+        <div class="message__title">
+            <h4>{{from}}</h4>
+            <span>{{createdAt}}</span>
+        </div>
+        <div class="message__body">
+            <p>
+                <a href="{{url}}" target="_blank">My current location</a>
+            </p>
+        </div>
+    </li>
+</script>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/libs/jquery-3.3.1.min.js"></script>
+<script src="/js/libs/moment.js"></script>
+<script src="/js/libs/mustache.js"></script>
+<script src="/js/libs/deparam.js"></script>
+<script src="/js/chat.js"></script>
+</body>
 </html>

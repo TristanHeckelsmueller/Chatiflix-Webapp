@@ -1,33 +1,41 @@
 <!DOCTYPE html>
-
-<html>
+<html lang="en">
 <head>
-
-    <title>Chatify|ChatApp</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>Join | CHATILFLIX</title>
+    <title>Chat | Chatiflix</title>
+    <meta name="keywords" content="Chat App, Tristan, Heckelsmueller, Heckelsmüller">
+    <meta name="description" content="Node-Chat-App made by Tristan Heckelsmueller">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <link rel="stylesheet" href="/css/styles.css">
 </head>
-<body class="centered-form">
+<body>
+<section class="login">
 
-    <div class="centered-form__form">
+    <div class="login__form">
         <form action="/chat.html">
-            <div class="form-field">
-                <h3>Join a Chat</h3>
+            <div class="login__form-title">
+                <h3>Join Chatiflix</h3>
+
             </div>
-            <div class="form-field">
-                <label>Display name</label>
-                <input type="text" name="name" autofocus/>
+            <div class="login__form-content">
+                <p for="name">Your Name:</p>
+                <input type="text" name="name" placeholder="Some random name" autofocus>
             </div>
-            <div class="form-field"></div>
-            <label>Room Name</label>
-            <input type="text" name="room"/>
-            <div class="form-field">
-                <button>Join</button>
+            <div class="login__form-content">
+                <p for="room">Room Name:</p>
+                <input type="text" name="room" placeholder="Some room you want to join">
+            </div>
+            <div class="login__form-content">
+                <button>Join a Room</button>
             </div>
         </form>
     </div>
-
+</section>
+<footer class="madeBy">
+    <span>Made by Tristan Heckelsmueller || <a href="https://github.com/TristanHeckelsmueller">GitHub Account</a></span>
+</footer>
 
 
 <script src="/socket.io/socket.io.js"></script>
