@@ -5,6 +5,7 @@ const socketIO = require('socket.io');
 
 
 
+
 const {generateMessage, generateLocationMessage} = require('./utils/message');
 const {isRealString} = require('./utils/validation');
 const {Users} = require('./utils/users');
@@ -16,6 +17,21 @@ let app = express();
 let server = http.createServer(app);
 let io = socketIO(server);
 let users = new Users();
+
+// Redirect to HTTPS
+app.enable('trust proxy');
+app.use (function (req, res, next) {
+	if (req.secure) {
+		// request was via https, so do no special handling
+		next();
+	} else {
+		// request was via http, so redirect to https
+		res.redirect('https://' + req.headers.host + req.url);
+	}
+});
+
+
+
 
 app.use(express.static(publicPath));
 
