@@ -1,0 +1,20 @@
+{
+    "short_name": "Chat",
+    "name": "Chat",
+    "icons": [
+        {
+          "src": "/assets/icon-192.png",
+          "type": "image/png",
+          "sizes": "192x192"
+        }, 
+        {
+          "src": "/assets/icon-512.png",
+          "type": "image/png",
+          "sizes": "512x512"
+        } 
+        ],
+    "start_url": "/?utm_source=homescreen",
+    "background_color": "#064c6d",
+    "theme_color": "#064c6d",
+    "display": "standalone"
+  }
